@@ -36,6 +36,8 @@ def create_notes():
         if xx != []:
             last_note = xx[-1][0] + 1
 
+        share = list(set(share))
+
         for i in share:
             share = sharedIds(user_id=i, note_id=last_note,
                               shred_by=current_user.id)
@@ -46,7 +48,7 @@ def create_notes():
         db.session.add(note)
         db.session.commit()
 
-        redirect(url_for('views.index'))
+        return redirect(url_for('views.index'))
     return render_template('notes_frm.html')
 
 
@@ -54,7 +56,7 @@ def create_notes():
 @login_required
 def viewNotes():
     notes = current_user.notes
-    res = db.session.query(sharedIds.note_id, Note.content, sharedIds.shred_by)\
-            .join(Note).filter(sharedIds.user_id == current_user.id).distinct()
+    res = db.session.query(sharedIds.note_id, Note.content, sharedIds.shred_by).join(
+        Note).filter(sharedIds.user_id == current_user.id).distinct()
 
-    return render_template('booklist.html', notes=res)
+    return render_template('booklist.html', notes=res, user=current_user.id)
