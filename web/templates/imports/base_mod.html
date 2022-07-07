@@ -1,0 +1,59 @@
+{% include "./imports/header.html" %}
+
+
+{%with flash = get_flashed_messages(with_categories=true) %}
+
+{% if flash %}
+
+{% for category, msg in flash %}
+{% if category == 'error' %}
+<div class="alert mx-5 mt-4 alert-danger alert-dismissible fade show text-center" role="alert">
+
+    {{msg}}
+
+    <button type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+    </button>
+
+</div>
+{% else %}
+<div class="alert mx-5 mt-4  alert-success alert-dismissible fade show text-center" role="alert">
+
+    {{msg}}
+
+    <button type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+    </button>
+
+</div>
+{% endif %}
+{% endfor %}
+
+{% endif %}
+{%endwith%}
+
+<div class="container">
+    <h3> {{name}}</h3>
+    <h1 class="text-center mx-5 mb-5">
+
+        {% block title %}
+        {% endblock %}
+    </h1>
+</div>
+
+<div class="container">
+    <h1 class="text-center">
+        {% block subtitle %}
+        {% endblock %}
+    </h1>
+</div>
+
+
+<div class="container d-flex justify-content-center w-100">
+    {% block content %}
+    {% endblock %}
+</div>
+
+
+
+{% include "./imports/footer.html" %}

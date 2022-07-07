@@ -1,0 +1,26 @@
+{% extends './imports/base_mod.html' %}
+{% block titl %} HOMEER {% endblock %}
+
+
+
+{% block content%}
+
+<div class="card align-items-center mt-5" style="width: 80%;">
+    <div class="card-body">
+        <h5 class="card-title font-weight-bold text-center">HOME</h5>
+        <span class="text-uppercase">{{session['username']}}</span> ! THIS IS SPARTAAAA 👊🦵 !!!!!
+
+
+        <h5 class="username mx-auto text-center pt-5 font-weight-light">
+            logged in as <b> {{session['username']}}</b>
+            <p>user id {{session['userid']}}</p>
+        </h5>
+        <div class="buttns d-flex justify-content-center pt-5">
+
+            <a href="{{url_for('views.create_notes')}}" class="card-link">Create Notes</a>
+
+            <a href="{{url_for('views.viewNotes')}}" class="card-link">View Notes</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
