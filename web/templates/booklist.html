@@ -1,22 +1,35 @@
 {% include "./imports/header.html" %}
 
-<div class="notes-card d-flex flex-column align-items-center">
+<div class="card-container">
+
     {%for x in notes%}
-    <!-- <p>{{x}}</p> -->
-    <div class="note  mt-5">
+
+    <div class="notes-card d-flex flex-column">
+
         <div class="note-header">
-            <h3>note {{x.note_id}}</h3>
-            <p>{{x.shred_by}}</p>
+            <h5> note {{x.note_id}}</h5>
+            {%if user!=x.shred_by%}
+            <p>Shared by - {{x.shred_by}}</p>
+
+
+            {%else%}
+            <p>Shared by - ME</p>
+
+            {%endif%}
         </div>
-        <div class="note-body">
-            <b>{{x.content}}</b>
+        <div class="note mt-5">
+
+            <div class="note-body">
+                <b>{{x.content}}</b>
+            </div>
+
         </div>
-        <div class="note-footer">
-            <p> sahred by user : <b>{{x.shred_by}}</b></p>
-        </div>
+
     </div>
     {%endfor%}
+
 </div>
+
 
 
 {% include "./imports/footer.html" %}
