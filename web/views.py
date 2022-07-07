@@ -1,13 +1,10 @@
 
 from sqlalchemy import text
-from requests import session
 from flask_login import login_user,  current_user, login_required
 from flask import render_template, request, redirect, url_for, flash, jsonify
 from flask import Blueprint
 from .models import User, Note, sharedIds
 from . import db
-from traceback import print_tb
-from codecs import ignore_errors
 
 
 views = Blueprint('views', __name__)
