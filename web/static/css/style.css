@@ -41,7 +41,7 @@ body {
 
 .card-container {
   margin-top: 40px;
-  background-color: rebeccapurple;
+/*   background-color: rebeccapurple; */
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
