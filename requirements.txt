@@ -5,3 +5,4 @@ SQLAlchemy==1.4.37
 gunicorn==20.1.0
 pymongo
 matplotlib
+MarkupSafe==2.0.1
