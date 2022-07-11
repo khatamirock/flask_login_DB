@@ -1,3 +1,7 @@
+@import 'resolution';
+
+
+
 .navbar {
     .navbar-brand {
         font-weight: bold;
@@ -19,8 +23,112 @@ body {
 
 
 .notes-card {
-    text-align: center;
+    // text-align: center;
     background: rgb(124, 255, 222);
-    width: 70%;
+    min-height: 10%;
+    overflow: hidden;
     border-radius: 10px;
+    padding: 10px 10%;
+
+    margin: 10px;
+    position: relative;
+
+
+    transition: all 0.14s ease-in-out;
+
+
+    .note-header {
+        font-size: .5em;
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        p {
+            margin: 0 !important;
+        }
+    }
+
+    .note-body {
+        margin-bottom: 50px;
+    }
+
+    .btn {
+        width: 30%;
+        font-size: 12px;
+        // display: none;
+        opacity: 0;
+        position: absolute;
+        bottom: 10px;
+        left: 35%;
+        // transition: display 0.14s ease-in-out;
+
+    }
+
+    &:hover {
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+        background-color: azure;
+    }
+
+
+}
+
+.card-container {
+    margin-top: 40px;
+
+    display: grid;
+    grid-auto-rows: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    align-items: flex-start;
+
+
+
+    @include tablet {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include phone {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+.popup-card {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    // add shadow
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+
+    .doc {
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(136, 158, 255);
+        border-radius: 10px;
+        padding: 10px 10%;
+        margin: 10px;
+        position: fixed;
+        width: 50%;
+        overflow-y: scroll;
+        max-height: 80vh;
+        z-index: 10;
+        transition: all 0.14s ease-in-out;
+
+        b {
+            padding: 13%;
+        }
+
+        .close {
+            text-align: end;
+        }
+    }
+
+    .hide {
+        display: none;
+
+    }
+
+
+
 }

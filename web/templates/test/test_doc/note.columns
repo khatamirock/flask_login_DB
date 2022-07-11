@@ -1,0 +1,6 @@
+"name","type","length","leftDigits","rightDigits"
+"id","INTEGER","2","2","0"
+"content","STRING","411","0","0"
+"time","STRING","0","0","0"
+"user_id","INTEGER","1","1","0"
+"shared","STRING","13","1","0"

@@ -1,14 +1,13 @@
 
 from sqlalchemy import text
-from requests import session
 from flask_login import login_user,  current_user, login_required
 from flask import render_template, request, redirect, url_for, flash, jsonify
 from flask import Blueprint
 from .models import User, Note, sharedIds
 from . import db
-from traceback import print_tb
-from codecs import ignore_errors
-
+# new imports
+from flask import Markup
+from markupsafe import Markup
 
 views = Blueprint('views', __name__)
 
@@ -39,6 +38,8 @@ def create_notes():
         if xx != []:
             last_note = xx[-1][0] + 1
 
+        share = list(set(share))
+
         for i in share:
             share = sharedIds(user_id=i, note_id=last_note,
                               shred_by=current_user.id)
@@ -49,15 +50,28 @@ def create_notes():
         db.session.add(note)
         db.session.commit()
 
-        redirect(url_for('views.index'))
+        return redirect(url_for('views.index'))
     return render_template('notes_frm.html')
 
 
 @views.route('/notes')
 @login_required
 def viewNotes():
-    notes = current_user.notes
-    res = db.session.query(sharedIds.note_id, Note.content, sharedIds.shred_by)\
-            .join(Note).filter(sharedIds.user_id == current_user.id).distinct()
+    # notes = current_user.notes
+    res = db.session.query(sharedIds.note_id, Note.content, sharedIds.shred_by).join(
+        Note).filter(sharedIds.user_id == current_user.id).distinct()
 
-    return render_template('booklist.html', notes=res)
+    return (render_template('booklist.html', notes=res, user=current_user.id))
+
+
+@views.route('/delete')
+@login_required
+def delete():
+    id = request.args.get('id')
+    note = Note.query.filter_by(id=id).first()
+    if note:
+        if note.user_id == current_user.id:
+            db.session.delete(note)
+            db.session.commit()
+            return redirect(url_for('views.viewNotes'))
+    return redirect(url_for('views.viewNotes'))

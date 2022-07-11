@@ -1,0 +1,5 @@
+"name","type","length","leftDigits","rightDigits"
+"id","INTEGER","1","1","0"
+"username","STRING","5","0","0"
+"password","INTEGER","3","3","0"
+"email","STRING","21","0","0"
