@@ -1,3 +1,118 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-size: 9vw;
+}
+
+h3 {
+  font-size: 3vw;
+}
+
+.intro {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #222831;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 15vw;
+  height: 85vh;
+  text-align: center;
+}
+
+.intro h1 {
+  color: #EEEEEE;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+.intro h3 {
+  color: #00ADB5;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+.whyuse {
+  background-color: #393E46;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10vw;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.whyuse h3 {
+  padding: 4vw;
+  color: #EEEEEE;
+  font-family: fantasy;
+  letter-spacing: 5px;
+  font-weight: 100;
+}
+
+.whyuse .tellThem {
+  text-align: center;
+}
+
+.whyuse .tellThem h3 {
+  color: #00ADB5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.whyuse .tellThem h3 span {
+  font-weight: bold;
+}
+
+footery {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  background-color: cadetblue;
+  padding: 10vw;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+}
+
+footery .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footery .left h3 {
+  padding: 20px;
+}
+
+footery .right {
+  font-size: 40px !important;
+}
+
 .navbar .navbar-brand {
   font-weight: bold;
   font-family: monospace;

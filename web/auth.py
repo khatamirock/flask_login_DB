@@ -40,7 +40,7 @@ def log():
         password = request.form['password']
 
         user = User.query.filter_by(username=username).first()
-        print(user)
+        print('>>>>>>>>>>>>>>>>>', user)
         # if user and user.password == password:
         logTrue, usery = mongolog(username, password)
         if logTrue:
