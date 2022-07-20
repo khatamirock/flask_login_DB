@@ -6,6 +6,10 @@ from flask import Blueprint
 from .models import User, Note, sharedIds
 from . import db
 
+# new imports
+from flask import Markup
+from markupsafe import Markup
+
 
 views = Blueprint('views', __name__)
 
@@ -55,8 +59,23 @@ def create_notes():
 @views.route('/notes')
 @login_required
 def viewNotes():
-    notes = current_user.notes
+
+    # notes = current_user.notes
     res = db.session.query(sharedIds.note_id, Note.content, sharedIds.shred_by).join(
         Note).filter(sharedIds.user_id == current_user.id).distinct()
 
-    return render_template('booklist.html', notes=res, user=current_user.id)
+    return (render_template('booklist.html', notes=res, user=current_user.id))
+
+
+@views.route('/delete')
+@login_required
+def delete():
+    id = request.args.get('id')
+    note = Note.query.filter_by(id=id).first()
+    if note:
+        if note.user_id == current_user.id:
+            db.session.delete(note)
+            db.session.commit()
+            return redirect(url_for('views.viewNotes'))
+    return redirect(url_for('views.viewNotes'))
+

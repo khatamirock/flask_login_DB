@@ -1,5 +1,19 @@
 {% include "./imports/header.html" %}
 
+ 
+<div class="popup-card">
+
+    <div class="doc hide" style="white-space: pre-line;">
+        <button type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <b>content
+        </b>
+    </div>
+</div>
+
+
+ 
 <div class="card-container">
 
     {%for x in notes%}
@@ -22,6 +36,11 @@
             <div class="note-body" style="white-space: pre-line;">
                 <b>{{x.content}}</b>
             </div>
+ 
+            <button class="btn delbtn btn-primary">DEL
+                <!-- <a href="{{url_for('auth.logout')}}">log.out</a> -->
+            </button>
+ 
 
         </div>
 
@@ -32,4 +51,7 @@
 
 
 
+ 
 {% include "./imports/footer.html" %}
+ 
+ 

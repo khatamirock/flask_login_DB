@@ -1,0 +1,5 @@
+"name","type","length","leftDigits","rightDigits"
+"id","INTEGER","2","2","0"
+"user_id","STRING","1","1","0"
+"note_id","INTEGER","2","2","0"
+"shred_by","INTEGER","1","1","0"
