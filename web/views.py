@@ -49,7 +49,7 @@ def viewNotes():
     for x in res:
         id = x['note_id']
         print(note.find_one({'id': id})['content'])
-        notels.append(note.find_one({'id': id})['content'])
+        notels.append(note.find_one({'id': id}))
     # noteList = [x if x in]
     # return redirect(url_for('views.index'))
     return (render_template('booklist.html', ref=res, notes=notels, user=userid))
