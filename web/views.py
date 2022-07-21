@@ -5,9 +5,11 @@ from flask import render_template, request, redirect, url_for, flash, jsonify
 from flask import Blueprint
 from .models import User, Note, sharedIds
 from . import db
+
 # new imports
 from flask import Markup
 from markupsafe import Markup
+
 
 views = Blueprint('views', __name__)
 
@@ -57,6 +59,7 @@ def create_notes():
 @views.route('/notes')
 @login_required
 def viewNotes():
+
     # notes = current_user.notes
     res = db.session.query(sharedIds.note_id, Note.content, sharedIds.shred_by).join(
         Note).filter(sharedIds.user_id == current_user.id).distinct()
@@ -75,3 +78,4 @@ def delete():
             db.session.commit()
             return redirect(url_for('views.viewNotes'))
     return redirect(url_for('views.viewNotes'))
+

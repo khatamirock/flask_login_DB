@@ -146,6 +146,7 @@ body {
 }
 
 .notes-card {
+ 
   background: #7cffde;
   border-radius: 10px;
   padding: 10px 10%;
@@ -263,5 +264,47 @@ body {
 
 .popup-card .hide {
   display: none;
+ 
+}
+
+.notes-card .note-header {
+  font-size: .5em;
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.notes-card .note-header p {
+  margin: 0 !important;
+}
+
+.card-container {
+  margin-top: 40px;
+/*   background-color: rebeccapurple; */
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .card-container {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
 }
 /*# sourceMappingURL=style.css.map */
