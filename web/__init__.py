@@ -3,8 +3,7 @@ from pymongo import mongo_client
 
 # Database setup
 
-# conn_str = '''mongodb+srv://ronin:roninrocK1@cluster0.mp1aw.mongodb.net/login?retryWrites=true&w=majority'''
-conn_str = '''mongodb+srv://ronin:roninrocK1@cluster0.mp1aw.mongodb.net/?retryWrites=true&w=majority'''
+conn_str = '''mongodb+srv://ronin:roninrocK1@cluster0.mp1aw.mongodb.net/login?retryWrites=true&w=majority'''
 client = mongo_client.MongoClient(conn_str)
 login = client['login']
 
