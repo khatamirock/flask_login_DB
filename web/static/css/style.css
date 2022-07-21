@@ -1,0 +1,137 @@
+.navbar .navbar-brand {
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 1.3em !important;
+}
+
+body {
+  background-color: rebeccapurple;
+}
+
+.form-class {
+  width: 70% !important;
+}
+
+.notes-card {
+  background: #7cffde;
+  min-height: 10%;
+  overflow: hidden;
+  border-radius: 10px;
+  padding: 10px 10%;
+  margin: 10px;
+  position: relative;
+  height: 300px;
+  line-height: 1.1em !important;
+  -webkit-transition: all 0.14s ease-in-out;
+  transition: all 0.14s ease-in-out;
+}
+
+.notes-card .note-header {
+  font-size: .5em;
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.notes-card .note-header p {
+  margin: 0 !important;
+}
+
+.notes-card .note-body {
+  margin-bottom: 50px;
+}
+
+.notes-card .btn {
+  width: 30%;
+  font-size: 12px;
+  opacity: 0;
+  position: absolute;
+  bottom: 10px;
+  left: 35%;
+}
+
+.notes-card:hover .btn {
+  opacity: 1;
+  display: block;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+}
+
+.card-container {
+  margin-top: 40px;
+  display: -ms-grid;
+  display: grid;
+  grid-auto-rows: auto;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .card-container {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+.popup-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+}
+
+.popup-card .doc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #889eff;
+  border-radius: 10px;
+  padding: 10px 10%;
+  margin: 10px;
+  position: fixed;
+  width: 50%;
+  overflow-y: scroll;
+  max-height: 80vh;
+  z-index: 10;
+  -webkit-transition: all 0.14s ease-in-out;
+  transition: all 0.14s ease-in-out;
+}
+
+.popup-card .doc b {
+  padding: 13%;
+}
+
+.popup-card .doc .close {
+  text-align: end;
+}
+
+.popup-card .hide {
+  display: none;
+}
+/*# sourceMappingURL=style.css.map */

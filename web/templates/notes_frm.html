@@ -1,0 +1,34 @@
+<!-- bootsrtap and navBar -->
+{% include "./imports/header.html" %}
+
+<form action="/create_notes" method="post">
+
+
+    <div class="formclass  d-flex align-items-center flex-column pt-5 ">
+        <label class="form-label" for="textAreaExample">Enter CODEs</label>
+        <div class="form-outline pt-5 mb-5" style="width: 70%;">
+            <textarea class="form-control" id="textAreaExample1" name="content" rows="4"></textarea>
+
+            <input type="text" class="form-control mt-5" name="shared" placeholder="shared with">
+            <small id="emailHelp" class="form-text text-muted">Enter whom do you wanted to share your CODE with.</small>
+        </div>
+
+        <!-- add -->
+        <button type="submit" class="btn btn-outline-primary w-20" style="width: 15%;">Save</button>
+
+        <!-- <button type="submit" class="btn btn-outline-dark px-5">Submit</button> -->
+
+    </div>
+
+</form>
+
+
+
+
+
+
+
+
+
+{% include "./imports/footer.html" %}
+<!-- essential links for bootstrap and js files.... -->

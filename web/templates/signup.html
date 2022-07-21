@@ -1,0 +1,28 @@
+{% extends './imports/base_mod.html' %}
+{% block titl %}singer {% endblock %}
+{% block title %} SING_Up please {% endblock %}
+
+
+{% block content%}
+<form action="/signup" style="width: 70%;" method="post">
+    <div class="mb-3">
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="User Name" name="username">
+
+    </div>
+
+    <div class="mb-3">
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Enter Email" name="email">
+
+    </div>
+    <div class="mb-3">
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="password" name="password">
+    </div>
+
+
+
+    <button type="submit" class="btn btn-outline-dark px-5">Submit</button>
+</form>
+{% endblock %}

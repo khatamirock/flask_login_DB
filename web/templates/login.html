@@ -1,0 +1,22 @@
+{% extends './imports/base_mod.html' %}
+{% block titl %} LOG-Inn {% endblock %}
+{% block title %} LOG-Inn {% endblock %}
+
+
+{% block content%}
+<form class="form-class w-70" style="width: 70%;" action="/login" method="post" autocomplete="off">
+    <div class="mb-3">
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder=". . . . YOUR EMAIL/UName" name="username">
+
+    </div>
+    <div class=" mb-3">
+        <input type="text" autocomplete="off" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="YOUR NAME" name="password">
+    </div>
+
+
+
+    <button type="submit" class="btn btn-outline-dark px-5">Submit</button>
+</form>
+{% endblock %}
