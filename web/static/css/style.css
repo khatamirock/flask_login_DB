@@ -35,9 +35,15 @@ h3 {
 }
 
 .intro h3 {
+  z-index: 10;
   color: #00ADB5;
   font-family: monospace;
   font-weight: bold;
+  overflow: hidden;
+}
+
+.intro h3 .code {
+  display: inline-block;
 }
 
 .whyuse {
@@ -45,6 +51,7 @@ h3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  text-align: center;
   padding: 10vw;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -58,7 +65,18 @@ h3 {
           justify-content: center;
 }
 
+.whyuse h2 {
+  color: #00ADB5;
+  font-size: 5vw;
+}
+
+.whyuse p {
+  font-size: 3vw;
+  font-size: 30px;
+}
+
 .whyuse h3 {
+  font-size: 4vw;
   padding: 4vw;
   color: #EEEEEE;
   font-family: fantasy;
@@ -129,10 +147,10 @@ body {
 
 .notes-card {
   background: #7cffde;
-  min-height: 10%;
-  overflow: hidden;
   border-radius: 10px;
   padding: 10px 10%;
+  height: 22%;
+  overflow: hidden;
   margin: 10px;
   position: relative;
   -webkit-transition: all 0.14s ease-in-out;
