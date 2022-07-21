@@ -8,10 +8,24 @@
 
         font-family: monospace;
         font-size: 1.3em !important;
-        // line spacing
+    }
 
+    .avatar {
+        width: 50px !important;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 10px;
+        background-color: rgb(32, 211, 231);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        h3 {
+            margin: 0 !important;
+        }
 
     }
+
 }
 
 body {
