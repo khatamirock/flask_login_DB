@@ -7,7 +7,7 @@
 .navbar .avatar {
   width: 50px !important;
   height: 50px;
-  border-radius: 50%;
+  border-radius: 25%;
   margin-right: 10px;
   background-color: #20d3e7;
   display: -webkit-box;
