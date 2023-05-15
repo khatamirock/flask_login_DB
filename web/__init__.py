@@ -1,9 +1,13 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
 from pymongo import mongo_client
-
+import os
 # Database setup
 
-conn_str = '''mongodb+srv://ronin:roninrocK1@cluster0.mp1aw.mongodb.net/login?retryWrites=true&w=majority'''
+
+mpass = os.environ['Mpass']
+# conn_str = '''mongodb+srv://ronin:roninrocK1@cluster0.mp1aw.mongodb.net/login?retryWrites=true&w=majority'''
+
+conn_str = '''mongodb+srv://{}.mp1aw.mongodb.net/login?retryWrites=true&w=majority'''.format(mpass)
 client = mongo_client.MongoClient(conn_str)
 login = client['login']
 
